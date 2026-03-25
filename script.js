@@ -93,3 +93,48 @@ function setActive(id) {
 }
 
 
+
+
+function openModal(issue) {
+    const modal = document.getElementById("modal");
+
+    modal.innerHTML = `
+        <div class="bg-white p-5 rounded w-[350px]">
+            <h2 class="font-bold mb-2">${issue.title}</h2>
+            <p class="text-sm mb-3">${issue.description}</p>
+
+            <p>Status: ${issue.status}</p>
+            <p>Author: ${issue.author}</p>
+            <p>Priority: ${issue.priority}</p>
+            <p>Label: ${issue.label}</p>
+
+            <div class="text-right mt-4">
+                <button onclick="closeModal()" class="btn btn-sm btn-primary">
+                    Close
+                </button>
+            </div>
+        </div>
+    `;
+
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+}
+
+function closeModal() {
+    document.getElementById("modal").classList.add("hidden");
+}
+
+
+function toggleLoader(show) {
+    const loader = document.getElementById("loader");
+
+    if(!loader){
+        return;
+    }
+
+    if(show){
+        loader.classList.remove("hidden");
+    } else {
+        loader.classList.add("hidden");
+    }
+}
