@@ -1,5 +1,5 @@
 
-document.getElementById('signIn-btn').addEventListener('click', function () {
+document.getElementById('signIn-btn').addEventListener('click',function () {
 
     const userInput = document.getElementById('input-user');
     const userName = userInput.value
