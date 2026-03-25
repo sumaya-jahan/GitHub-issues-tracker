@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title and logo -->
+    <title>home</title>
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- font integration    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- tailwind + daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+
+<body class="bg-base-200">
+    <!-- navbar -->
+<nav class="navbar bg-base-100 shadow-md px-6">
+
+    <div class="flex gap-2 items-center ">
+        <img src="./assets/github-logo.png" class="w-8 h-8" alt="logo">
+        <p class="font-semibold text-lg">GitHub Issues Tracker</p>
+    </div>
+
+    <div class="flex items-center gap-3 ml-auto">
+
+        <input type="text" placeholder="Search issues..." class="input input-bordered input-sm w-40 md:w-60">
+
+        <button class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-plus"></i>
+            <p>New Issue</p>
+        </button>
+
+    </div>
+
+</nav>
+
+<!-- Centered box with buttons -->
+
+<div class=" flex justify-center mt-10  ">
+    <div class="bg-base-100  rounded-lg p-5 flex items-center gap-3 w-[70%]">
+        
+        <div class="flex gap-2">
+            <button id="btn-1" class="btn px-10 bg-base-100 font-semibold text-[#64748B] ">All</button>
+            <button id="btn-2" class="btn px-8 bg-base-100 font-semibold text-[#64748B] " >Open</button>
+            <button id="btn-3" class="btn px-7 bg-base-100 font-semibold text-[#64748B]">Closed</button>
+        </div>
+    </div>
+</div>
+
+<!-- issue container -->
+ <div id="issue-container" class="grid grid-cols-4 gap-4"></div>
+
+
+ <script src="./script.js"></script>
+</body>
+</html>
