@@ -93,6 +93,23 @@ function setActive(id) {
 }
 
 
+document.getElementById("search-btn").addEventListener("click", function () {
+    const text = document.getElementById("search-input").value;
+
+    if (text==="") {
+        return;
+    }
+
+    toggleLoader(true);
+
+    fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`)
+        .then(res => res.json())
+        .then(data => {
+            showIssues(data.data);
+        })
+        .catch(err => console.log("Search error:", err))
+        .finally(() => toggleLoader(false));
+});
 
 
 function openModal(issue) {
@@ -128,13 +145,13 @@ function closeModal() {
 function toggleLoader(show) {
     const loader = document.getElementById("loader");
 
-    if(!loader){
-        return;
-    }
+    // if(!loader){
+    //     return;
+    // }
 
-    if(show){
-        loader.classList.remove("hidden");
-    } else {
-        loader.classList.add("hidden");
-    }
+    // if(show){
+    //     loader.classList.remove("hidden");
+    // } else {
+    //     loader.classList.add("hidden");
+    // }
 }
